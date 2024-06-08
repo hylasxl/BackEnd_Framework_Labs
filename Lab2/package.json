@@ -1,0 +1,45 @@
+{
+  "name": "lab1",
+  "version": "1.0.0",
+  "description": "A sample Node.js project with TypeScript and Express",
+  "main": "dist/index.js",
+  "scripts": {
+    "preprod": "npm run build",
+    "prestart": "npm run build",
+    "predev": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
+    "prod": "cross-env NODE_ENV=production concurrently \"tsc --watch\" \"nodemon -q dist/index.js\"",
+    "build": "rimraf dist && tsc",
+    "start": "cross-env NODE_ENV=production node dist/index.js"
+  },
+  "keywords": [
+    "typescript",
+    "express",
+    "nodejs",
+    "mongoose"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.13.0",
+    "nodemon": "^3.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.1",
+    "rimraf": "^5.0.7"
+  }
+}
